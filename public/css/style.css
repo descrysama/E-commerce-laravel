@@ -3,9 +3,11 @@ body{
 }
 hr{
     margin-top: -2px;
-    opacity: 1;
     color: #898989;
+    height: 2px !important;
+    
 }
+<<<<<<< HEAD
 
 .green-h:hover {
     color: rgb(0, 100, 0);
@@ -13,20 +15,27 @@ hr{
 
 .green-h {
     color: rgb(0, 139, 0);
+=======
+.container{
+    margin-bottom: 20px;
+}
+.fa-brands{
+    color: #57806b !important;
+>>>>>>> 32684bec1fd47da18db59f2bfb8cfbcb44a403c6
 }
 
 .bg-light {
     --bs-bg-opacity: 0 !important;
     background-color: #F7F6F4!important;
-    }
-    .nav-link {
-        display: block;
-        padding: .5rem 1rem;
-        color: #000000 !important;
-        text-decoration: none;
-        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-        }
-        .navbar-brand {
-            color: #57806b !important;
-            font-weight: bold !important;
-            }
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    color: #000000 !important;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+.navbar-brand {
+    color: #57806b !important;
+    font-weight: bold !important;
+}

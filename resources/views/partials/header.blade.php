@@ -9,7 +9,7 @@
                     <div class="navbar-nav">
                         @if (Route::has('login'))
                         @auth
-                        <a class="nav-link active" href="{{ route('logout') }}">Logout</a>
+                        <a class="nav-link active" href="{{ route('logout') }}">Se déconnecter</a>
                         <a class="nav-link active" href="{{ route('cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
                         @else
                         <a class="nav-link active" href="{{ route('login') }}">Se connecter</a>
