@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand " href="{{ url('/') }}"><img src="{{ asset('img/logo-plantis.png')}}" alt="plantis" width="50%"></a>
