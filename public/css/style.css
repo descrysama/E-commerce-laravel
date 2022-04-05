@@ -1,0 +1,21 @@
+body{
+    background-color: #F7F6F4;
+}
+hr{
+    margin-top: -2px;
+}
+.bg-light {
+    --bs-bg-opacity: 0 !important;
+    background-color: #F7F6F4!important;
+    }
+    .nav-link {
+        display: block;
+        padding: .5rem 1rem;
+        color: #000000 !important;
+        text-decoration: none;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+        }
+        .navbar-brand {
+            color: #57806b !important;
+            font-weight: bold !important;
+            }
