@@ -15,7 +15,7 @@
                         <a class="nav-link active" href="{{ route('login') }}">Se connecter</a>
                         @endauth
                         @endif
-                        <a class="nav-link active" href="#">PANIER</a>
+                        <a class="nav-link active" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                 </div>
             </div>
