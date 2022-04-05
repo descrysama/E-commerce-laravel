@@ -3,6 +3,8 @@ body{
 }
 hr{
     margin-top: -2px;
+    opacity: 1;
+    color: #898989;
 }
 .bg-light {
     --bs-bg-opacity: 0 !important;
