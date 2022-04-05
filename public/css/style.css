@@ -6,6 +6,15 @@ hr{
     opacity: 1;
     color: #898989;
 }
+
+.green-h:hover {
+    color: rgb(0, 100, 0);
+}
+
+.green-h {
+    color: rgb(0, 139, 0);
+}
+
 .bg-light {
     --bs-bg-opacity: 0 !important;
     background-color: #F7F6F4!important;

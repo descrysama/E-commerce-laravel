@@ -8,6 +8,7 @@ class cartController extends Controller
 {
     public function index()
     {
-        return view('dashboard.cart');
+        $cart = [];
+        return view('dashboard.cart', compact('cart'));
     }
 }
