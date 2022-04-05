@@ -10,7 +10,7 @@
                     <div class="navbar-nav">
                         @if (Route::has('login'))
                         @auth
-                        <a class="nav-link active" href="{{ url('/dashboard') }}">Dashboard</a>
+                        <a class="nav-link active" href="{{ route('logout') }}">Logout</a>
                         @else
                         <a class="nav-link active" href="{{ route('login') }}">Se connecter</a>
                         @endauth
