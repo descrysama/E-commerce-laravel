@@ -7,21 +7,11 @@ hr{
     height: 2px !important;
     
 }
-<<<<<<< HEAD
-
-.green-h:hover {
-    color: rgb(0, 100, 0);
-}
-
-.green-h {
-    color: rgb(0, 139, 0);
-=======
 .container{
     margin-bottom: 20px;
 }
 .fa-brands{
     color: #57806b !important;
->>>>>>> 32684bec1fd47da18db59f2bfb8cfbcb44a403c6
 }
 
 .bg-light {
@@ -38,4 +28,18 @@ hr{
 .navbar-brand {
     color: #57806b !important;
     font-weight: bold !important;
+}
+
+.green-h:hover {
+    color: rgb(0, 100, 0);
+}
+
+.green-h {
+    color: rgb(0, 139, 0);
+=======
+.container{
+    margin-bottom: 20px;
+}
+.fa-brands{
+    color: #57806b !important;
 }
