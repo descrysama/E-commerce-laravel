@@ -35,7 +35,7 @@
                                 </div>
                             @endforeach
                             <div class="col-md-12 m-2">
-                                <h2>Total : {{$prix_total}}€</h2>
+                                <h3>Total : {{$prix_total}}€</h3>
                             </div>
                             
                         </div>
