@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\articleController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\cartController;
+use App\Http\Controllers\cartsController;
+use App\Http\Controllers\articlesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,9 @@ use App\Http\Controllers\cartController;
 |
 */
 
-Route::get('/', [articleController::class, 'index']);
+Route::get('/', [articlesController::class, 'index']);
 
-Route::get('/cart', [cartController::class, 'index'])->middleware(['auth'])->name('cart');
+Route::get('/cart', [cartsController::class, 'index'])->middleware(['auth'])->name('cart');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
