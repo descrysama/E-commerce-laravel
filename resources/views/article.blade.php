@@ -14,7 +14,7 @@
             </div>
             <p>{{$article -> description}}</p>
             <div class="d-flex justify-content-end">
-                <p>{{$article -> prix}}</p>
+                <p>{{$article -> prix}}€</p>
             </div>
             <div class="d-flex justify-content-end">
                 <button type="submit" class="btn btn-success">Ajouter au panier</button>
@@ -32,7 +32,7 @@
                     <div class="d-flex">
                         <h6 class="card-title">{{$article -> nom}}</h6>
                         <div class="d-flex justify-content-end ms-auto">
-                            <h6 class="card-title">{{$article -> prix}}</h6>
+                            <h6 class="card-title">{{$article -> prix}}€</h6>
                         </div>
                     </div>
                 </div>
