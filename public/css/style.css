@@ -10,6 +10,13 @@ hr{
 .container{
     margin-bottom: 20px;
 }
+.card{
+    border: none !important;
+}
+.card-body{
+    background-color: #F7F6F4 !important;
+}
+
 .fa-brands{
     color: #57806b !important;
 }
@@ -36,7 +43,7 @@ hr{
 
 .green-h {
     color: rgb(0, 139, 0);
-=======
+}
 .container{
     margin-bottom: 20px;
 }
