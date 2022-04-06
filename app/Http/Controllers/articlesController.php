@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\carts;
 use App\Models\articles;
 use Illuminate\Http\Request;
 
@@ -23,5 +24,15 @@ class articlesController extends Controller
     {
         $article = articles::find($id);
         return view('article')->with('article', $article);
+    }
+
+    public function add(Request $request)
+    {
+        $cart=new carts([
+            'user_id' => $request -> user_id ,
+            'article_id'=> $request -> article_id
+        ]);
+        $cart->save();
+        return redirect('/');
     }
 }
