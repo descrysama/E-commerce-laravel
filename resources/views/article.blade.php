@@ -4,16 +4,45 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5 col-12 col-lg-5">
-        <img src="{{ asset('img/plante3.jpg') }}" class="card-img-top" alt="3" width="125rem">
+            <img src="{{$article -> image}}" class="card-img-top" alt="3" width="125rem">
         </div>
         <div class="col-md-2 col-12 col-lg-2"></div>
-        
+
         <div class="col-md-5 col-12 col-lg-5">
-        <div class="d-flex justify-content-center">
-        <h3>Nom Plante</h3>
-        </div>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, voluptas! Quaerat ullam corporis, consequatur possimus officia eaque sed cum minus magnam corrupti aliquid sunt quia, hic qui tempora reprehenderit architecto.</p>
+            <div class="d-flex justify-content-center">
+                <h3>{{$article -> nom}}</h3>
+            </div>
+            <p>{{$article -> description}}</p>
+            <div class="d-flex justify-content-end">
+                <p>{{$article -> prix}}</p>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-success">Ajouter au panier</button>
+            </div>
         </div>
     </div>
 </div>
+
+<hr>
+
+<p>D'autres articles susceptibles de vous plaires :</p>
+
+
+<div class="col-md-3 col-12 col-lg-3 m-2 d-flex justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <form action="{{ url('/article' . $article->id) }}" method="POST">
+                        @csrf
+                        <button type="submit"><img src="{{$article -> image}}" class="card-img-top" alt="..."></button>
+                    </form>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <h6 class="card-title">{{$article -> nom}}</h6>
+                            <div class="d-flex justify-content-end ms-auto">
+                                <h6 class="card-title">{{$article -> prix}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 @endsection
