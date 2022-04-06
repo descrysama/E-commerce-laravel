@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container">
+    <h3>Bonjour {{Auth::user()->name}}</h3>
     <div class="d-flex justify-content-evenly">
         <div class="row d-flex justify-content-center">
             @foreach ($articles as $article)
