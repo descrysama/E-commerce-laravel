@@ -18,6 +18,7 @@ Route::get('/', [articlesController::class, 'index']);
 
 Route::get('/cart', [cartsController::class, 'index'])->middleware(['auth'])->name('cart');
 Route::post('cart/delete/{id}', [cartsController::class, 'delete'])->middleware(['auth']);
+Route::get('cart/checkout/{id}/{total}', [cartsController::class, 'checkout'])->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
