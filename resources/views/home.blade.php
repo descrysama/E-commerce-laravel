@@ -13,7 +13,7 @@
                         <div class="d-flex">
                             <h6 class="card-title">{{$article -> nom}}</h6>
                             <div class="d-flex justify-content-end ms-auto">
-                                <h6 class="card-title">{{$article -> prix}}</h6>
+                                <h6 class="card-title">{{$article -> prix}}€</h6>
                             </div>
                         </div>
                     </div>
