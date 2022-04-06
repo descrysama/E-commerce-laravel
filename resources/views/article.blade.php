@@ -17,11 +17,16 @@
                 <p>{{$article -> prix}}€</p>
             </div>
             <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-success">Ajouter au panier</button>
+                <form action="{{ url('article/add') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="user_id" value="{{Auth::user() -> id}} ">
+                    <input type="hidden" name="article_id" value="{{$article -> id}}">
+                    <button type="submit" class="btn btn-success">Ajouter au panier</button>
+                </form>
             </div>
         </div>
 
-<hr class="mt-4">
+        <hr class="mt-4">
 
         <p>D'autres articles susceptibles de vous plaires :</p>
 
@@ -41,4 +46,4 @@
     </div>
 </div>
 
-        @endsection
+@endsection
