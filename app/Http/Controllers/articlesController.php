@@ -18,4 +18,10 @@ class articlesController extends Controller
         $article = articles::find($id);
         return $article;
     }
+
+    public function show($id)
+    {
+        $article = articles::find($id);
+        return view('article')->with('article', $article);
+    }
 }
