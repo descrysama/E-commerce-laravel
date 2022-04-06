@@ -14,7 +14,7 @@ use App\Http\Controllers\cartController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('article');
 });
 
 Route::get('/cart', [cartController::class, 'index'])->middleware(['auth'])->name('cart');
