@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\articleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cartController;
 /*
@@ -13,9 +14,7 @@ use App\Http\Controllers\cartController;
 |
 */
 
-Route::get('/', function () {
-    return view('article');
-});
+Route::get('/', [articleController::class, 'index']);
 
 Route::get('/cart', [cartController::class, 'index'])->middleware(['auth'])->name('cart');
 
