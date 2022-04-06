@@ -14,8 +14,15 @@ class cartsController extends Controller
         $cart = carts::where('user_id', Auth::user()->id)->get();
         foreach ($cart as $item) {
             $article = articlesController::getSingle($item->article_id);
-            array_push($cart_content , $article);
+            $article['item_id'] = $item->id;
+            array_push($cart_content , $article );
         }
         return view('dashboard.cart', ['cart_content' => $cart_content]);
+    }
+
+    public function delete($id)
+    {
+        carts::find($id)->delete();
+        return redirect('cart');
     }
 }

@@ -25,7 +25,10 @@
                                                 <h5>{{$article->prix}}</h5>
                                             </div>
                                             <div class="m-2 h-100">
-                                            <a class="green-h" href=""><i class="fa-solid fa-circle-xmark fa fa-2x"></i></a>
+                                                <form action="{{ url('cart/delete', $article->item_id) }}" method="POST">
+                                                    @csrf
+                                                    <button class="borderless green-h" type="submit"><i class="fa-solid fa-circle-xmark fa fa-2x"></i></button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
