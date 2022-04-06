@@ -34,7 +34,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <h3>Total : {{$prix_total}}€</h3>
+                           <h3>Total : {{$prix_total}}€</h3>
                         </div>
                     </div>
                 </div>
