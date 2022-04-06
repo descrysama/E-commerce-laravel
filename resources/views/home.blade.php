@@ -8,10 +8,7 @@
             @foreach ($articles as $article)
             <div class="col-md-3 col-12 col-lg-3 m-2 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
-                    <form action="{{ url('/article' . $article->id) }}" method="POST">
-                        @csrf
-                        <button class="borderless" type="submit"><img src="{{$article -> image}}" class="card-img-top" alt="..."></button>
-                    </form>
+                    <a href="{{ url('/article' , $article->id) }}"><img src="{{$article -> image}}" class="card-img-top" alt="..."></a>
                     <div class="card-body">
                         <div class="d-flex">
                             <h6 class="card-title">{{$article -> nom}}</h6>
