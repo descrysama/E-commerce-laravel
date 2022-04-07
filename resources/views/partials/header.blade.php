@@ -15,6 +15,9 @@
                         <a class="nav-link active" href="{{ route('login') }}">Se connecter</a>
                         @endauth
                         @endif
+                        @if (Auth::user() && Auth::user()->role == 1)
+                        <a class="nav-link active" href="{{ route('admin') }}">admin</a>
+                        @endif
                     </div>
                 </div>
             </div>
