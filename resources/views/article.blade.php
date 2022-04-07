@@ -9,13 +9,15 @@
         <div class="col-md-2 col-12 col-lg-2"></div>
 
         <div class="col-md-5 col-12 col-lg-5">
-            <div class="d-flex justify-content-center">
+            <div class="card p-4 h-75">
                 <h3>{{$article -> nom}}</h3>
+                <p class="h-50 d-flex align-items-center">{{$article -> description}}</p>
+                <div class="d-flex justify-content-end">
+                    <p>{{$article -> prix}}€</p>
+                </div>
             </div>
-            <p>{{$article -> description}}</p>
-            <div class="d-flex justify-content-end">
-                <p>{{$article -> prix}}€</p>
-            </div>
+            
+            
             @if (Auth::user())
             <div class="d-flex justify-content-end">
                 
