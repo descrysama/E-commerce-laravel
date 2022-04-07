@@ -32,6 +32,7 @@
 
         <p>D'autres articles susceptibles de vous plaires :</p>
 
+        @foreach($tab as $article)
         <div class="col-md-3 col-12 col-lg-3 m-2 d-flex justify-content-center">
             <div class="card" style="width: 18rem;">
                 <a href="{{ url('/article' , $article->id) }}"><img src="{{$article -> image}}" class="card-img-top" alt="..."></a>
@@ -45,6 +46,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 

@@ -22,8 +22,9 @@ class articlesController extends Controller
 
     public function show($id)
     {
+        $tab = articles::all()->random(3);
         $article = articles::find($id);
-        return view('article')->with('article', $article);
+        return view('article',['article' => $article, 'tab' => $tab]);
     }
 
     public function add(Request $request)
@@ -35,4 +36,5 @@ class articlesController extends Controller
         $cart->save();
         return redirect('/');
     }
+
 }
