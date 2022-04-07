@@ -30,7 +30,10 @@ class cartsController extends Controller
 
     public function delete($id)
     {
-        carts::find($id)->delete();
+        $item = carts::find($id);
+        if ($item->user_id == Auth::user()->id) {
+            $item->delete();
+        }
         return redirect('cart');
     }
 
@@ -43,5 +46,17 @@ class cartsController extends Controller
                 ['amount' => $total, 'currency' => 'eur', 'payment_method' => 'pm_card_visa']
             );
         }
+    }
+
+    public function add(Request $request, $article_id)
+    {
+        if ($request->user_id == Auth::user()->id) {
+            $cart=new carts([
+                'user_id' => $request -> user_id ,
+                'article_id'=> $article_id
+            ]);
+            $cart->save();
+        }
+        return redirect('/');
     }
 }

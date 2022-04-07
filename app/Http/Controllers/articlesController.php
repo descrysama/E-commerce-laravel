@@ -23,10 +23,11 @@ class articlesController extends Controller
 
     public function show($id)
     {
+        $tab = articles::all()->except($id)->random(3);
         $article = articles::find($id);
-        return view('article')->with('article', $article);
+        return view('article',['article' => $article, 'tab' => $tab]);
     }
-
+  
     public function add(Request $request)
     {
         $cart=new carts([
@@ -63,6 +64,5 @@ class articlesController extends Controller
         $article->update($input);
         return redirect('/admin/home');
     }
-
 }
 
