@@ -17,12 +17,14 @@
                 <p>{{$article -> prix}}€</p>
             </div>
             <div class="d-flex justify-content-end">
-                <form action="{{ url('article/add') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="user_id" value="{{Auth::user() -> id}} ">
-                    <input type="hidden" name="article_id" value="{{$article -> id}}">
-                    <button type="submit" class="btn btn-success">Ajouter au panier</button>
-                </form>
+                @if (Auth::user())
+                    <form action="{{ url('article/add') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{Auth::user() -> id}} ">
+                        <input type="hidden" name="article_id" value="{{$article -> id}}">
+                        <button type="submit" class="btn btn-success">Ajouter au panier</button>
+                    </form>
+                @endif
             </div>
         </div>
 
