@@ -30,7 +30,10 @@ class cartsController extends Controller
 
     public function delete($id)
     {
-        carts::find($id)->delete();
+        $item = carts::find($id);
+        if ($item->user_id == Auth::user()->id) {
+            $item->delete();
+        }
         return redirect('cart');
     }
 
