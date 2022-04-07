@@ -44,4 +44,16 @@ class cartsController extends Controller
             );
         }
     }
+
+    public function add(Request $request, $article_id)
+    {
+        if ($request->user_id == Auth::user()->id) {
+            $cart=new carts([
+                'user_id' => $request -> user_id ,
+                'article_id'=> $article_id
+            ]);
+            $cart->save();
+        }
+        return redirect('/');
+    }
 }

@@ -19,7 +19,7 @@ Route::get('/cart', [cartsController::class, 'index'])->middleware(['auth'])->na
 
 Route::post('cart/delete/{id}', [cartsController::class, 'delete'])->middleware(['auth']);
 
-Route::post('article/add', [articlesController::class, 'add']);
+Route::post('article/add/{article_id}', [cartsController::class, 'add'])->middleware(['auth']);
 
 Route::get('cart/checkout/{id}/{total}', [cartsController::class, 'checkout'])->middleware(['auth']);
 

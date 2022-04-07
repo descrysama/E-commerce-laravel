@@ -22,19 +22,9 @@ class articlesController extends Controller
 
     public function show($id)
     {
-        $tab = articles::all()->random(3);
+        $tab = articles::all()->except($id)->random(3);
         $article = articles::find($id);
         return view('article',['article' => $article, 'tab' => $tab]);
-    }
-
-    public function add(Request $request)
-    {
-        $cart=new carts([
-            'user_id' => $request -> user_id ,
-            'article_id'=> $request -> article_id
-        ]);
-        $cart->save();
-        return redirect('/');
     }
 
 }
