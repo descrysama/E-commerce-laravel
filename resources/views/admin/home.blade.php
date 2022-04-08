@@ -21,6 +21,10 @@
                                 <h6 class="card-title">{{$article -> prix}}€</h6>
                             </div>
                         </div>
+                        <form method="POST" action="{{ url('/admin/delete' , $article->id) }}" style="display:inline">
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact"><i class="fa-solid fa-trash-xmark"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
