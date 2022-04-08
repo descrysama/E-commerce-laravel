@@ -44,3 +44,6 @@ Route::get('/admin/edit/{id}', [articlesController::class, 'edit'])->middleware(
 Route::post('/admin/create', [articlesController::class, 'store'])->middleware(['auth']);
 
 Route::get('/admin/create', [articlesController::class, 'create'])->middleware(['auth'])->name('create');
+
+Route::post('/admin/delete/{id}', [articlesController::class, 'destroy'])->middleware(['auth'])->name('destroy');
+Route::post('/admin/{id}', [articlesController::class, 'update'])->middleware(['auth']);

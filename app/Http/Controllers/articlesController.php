@@ -23,7 +23,12 @@ class articlesController extends Controller
 
     public function show($id)
     {
-        $tab = articles::all()->except($id)->random(3);
+        if (count(articles::all()) >= 3 ) {
+            $tab = articles::all()->except($id)->random(3);
+        } else {
+            $tab = articles::all()->except($id);    
+        }
+
         $article = articles::find($id);
         return view('article',['article' => $article, 'tab' => $tab]);
     }
@@ -78,6 +83,17 @@ class articlesController extends Controller
         $input = $request->all();
         articles::create($input);
         return redirect('admin')->with('flash_message', 'Articles Ajouté !');
+    }
+
+    public function destroy($id)
+    {
+        if (Auth::user()->role == 1) {
+            $article = articles::find($id);
+            $article->delete();
+            return redirect('/admin/home');
+        } else {
+            return redirect('/');
+        }
     }
 }
 
