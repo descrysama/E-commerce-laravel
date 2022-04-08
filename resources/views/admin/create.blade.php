@@ -2,10 +2,10 @@
 @section('content')
  
 <div class="card">
-  <div class="card-header">Contactus Page</div>
+  <div class="card-header">Ajouter un article</div>
   <div class="card-body">
       
-      <form action="{{ url('addarticle') }}" method="post">
+      <form action="{{ url('/admin/create') }}" method="post">
         {!! csrf_field() !!}
         <label>Nom</label></br>
         <input type="text" name="nom" id="name" class="form-control"></br>
@@ -15,7 +15,7 @@
         <input type="text" name="prix" id="mobile" class="form-control"></br>
         <label>image</label></br>
         <input type="text" name="image" id="mobile" class="form-control"></br>
-        <input type="submit" value="Save" class="btn btn-success"></br>
+        <input type="submit" value="Ajouter" class="btn btn-success"></br>
     </form>
    
   </div>

@@ -18,6 +18,7 @@ Route::get('/admin', [articlesController::class, 'index2'])->middleware(['auth']
 
 
 Route::get('/', [articlesController::class, 'index']);
+
 Route::get('/cart', [cartsController::class, 'index'])->middleware(['auth'])->name('cart');
 
 Route::post('cart/delete/{id}', [cartsController::class, 'delete'])->middleware(['auth']);
@@ -28,7 +29,6 @@ Route::get('cart/checkout/{id}/{total}', [cartsController::class, 'checkout'])->
 
 Route::get('article/{id}', [articlesController::class, 'show']);
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -36,6 +36,11 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/admin/home', [articlesController::class, 'index2'])->middleware(['auth'])->name('adminhome');
+
 Route::post('/admin/edit/{id}', [articlesController::class, 'update'])->middleware(['auth']);
+
 Route::get('/admin/edit/{id}', [articlesController::class, 'edit'])->middleware(['auth'])->name('edit');
 
+Route::post('/admin/create', [articlesController::class, 'store'])->middleware(['auth']);
+
+Route::get('/admin/create', [articlesController::class, 'create'])->middleware(['auth'])->name('create');
