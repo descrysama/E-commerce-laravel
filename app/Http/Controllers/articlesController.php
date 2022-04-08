@@ -26,7 +26,7 @@ class articlesController extends Controller
         if (count(articles::all()) >= 3 ) {
             $tab = articles::all()->except($id)->random(3);
         } else {
-            $tab = articles::all()->except($id);    
+            $tab = articles::random(3)->except($id);    
         }
 
         $article = articles::find($id);
