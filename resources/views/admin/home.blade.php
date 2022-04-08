@@ -6,6 +6,8 @@
     @if (Auth::user())
         <h3>Bonjour Admin {{Auth::user()->name}}</h3>
     @endif
+    <a href="{{ url('/admin/create') }}"><i class="fa-solid fa-circle-plus"></i></a>
+
     <div class="d-flex justify-content-evenly">
         <div class="row d-flex justify-content-center">
             @foreach ($articles as $article)

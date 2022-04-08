@@ -47,6 +47,7 @@ class articlesController extends Controller
             return redirect('/');
         }
     }
+
     public function edit($id)
     {
         if (Auth::user() && Auth::user()->role == 1) {
@@ -63,6 +64,20 @@ class articlesController extends Controller
         $article = articles::find($id);
         $article->update($input);
         return redirect('/admin/home');
+    }
+
+    public function create()
+    {
+        if (Auth::user() && Auth::user()->role == 1) {
+            return view('admin.create');
+        }
+    }
+
+    public function store(Request $request)
+    {
+        $input = $request->all();
+        articles::create($input);
+        return redirect('admin')->with('flash_message', 'Articles Ajouté !');
     }
 }
 
