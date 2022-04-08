@@ -1,10 +1,9 @@
 @extends('layouts.template')
-
 @section('content')
 
 <div class="container">
     @if (Auth::user())
-        <h3>Bonjour Admin {{Auth::user()->name}}</h3>
+    <h3>Bonjour Admin {{Auth::user()->name}}</h3>
     @endif
     <a href="{{ url('/admin/create') }}"><i class="fa-solid fa-circle-plus"></i></a>
 
