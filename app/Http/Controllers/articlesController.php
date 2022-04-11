@@ -23,6 +23,7 @@ class articlesController extends Controller
 
     public function show($id)
     {
+
         if (count(articles::all()) >= 1 ) {
             $tab = articles::all()->except($id)->random(3);
         } else {
