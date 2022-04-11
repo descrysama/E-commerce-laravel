@@ -23,10 +23,10 @@ class articlesController extends Controller
 
     public function show($id)
     {
-        if (count(articles::all()) >= 3 ) {
-            $tab = articles::all()->except($id)->random(3);
+        if (count(articles::all()) > 3 ) {
+            $tab = articles::random(3)->except($id);
         } else {
-            $tab = articles::random(3)->except($id);    
+            $tab = articles::all()->except($id);    
         }
 
         $article = articles::find($id);
